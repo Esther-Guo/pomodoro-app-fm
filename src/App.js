@@ -12,7 +12,8 @@ function App() {
   const [longBreak, setLongBreak] = useState(15);
 
   const [timer, setTimer] = useState(25*60);
-  const [startTimer, setStartTimer] = useState(false);
+  const [start, setStart] = useState(false);
+  const [pause, setPause] = useState(false);
   const [session, setSession] = useState("pomodoro"); // pomodoro | short | long
 
   const [font, setFont] = useState("kumbh"); // kumbh | roboto | space
@@ -34,7 +35,7 @@ function App() {
   function handleChangeSession(timerLen, sessionName) {
     setTimer(timerLen * 60);
     setSession(sessionName);
-    setStartTimer(false);
+    setStart(false);
   }
 
   // user click settings button to open settings tab
@@ -51,15 +52,17 @@ function App() {
   }
 
   useEffect(() => {
-    if (startTimer) {
+    if (start) {
       if (timer > 0) {
-        let interval = setInterval(() => {
-          setTimer(seconds => seconds-1);
-        }, 1000);
-        return () => clearInterval(interval);
+        if (!pause) {
+          let interval = setInterval(() => {
+            setTimer(seconds => seconds-1);
+          }, 1000);
+          return () => clearInterval(interval);
+        }
       }
       else {
-        setStartTimer(false);
+        setStart(false);
       }
     }
     else {
@@ -67,7 +70,7 @@ function App() {
       if (session === 'short') setTimer(shortBreak*60);
       if (session === 'long') setTimer(longBreak*60);
     }
-  }, [startTimer, timer]);
+  }, [start, pause, timer]);
 
   return (
     <div className="App">
@@ -78,7 +81,17 @@ function App() {
           <Button buttonClass={session === "short"? controlButtonColor:"control-button"} text="Short Break" onClick={() => handleChangeSession(shortBreak, "short")} />
           <Button buttonClass={session === "long"? controlButtonColor:"control-button"} text="Long Break" onClick={() => handleChangeSession(longBreak, "long")} />
         </div>
-        <Clock />
+        <Clock setStart={setStart}
+                start={start}
+                setPause={setPause}
+                pause={pause}
+                timer={timer}
+                // session={session}
+                themeColor={themeColor}
+                // pomodoro={pomodoro}
+                // short={shortBreak}
+                // long={longBreak}
+        />
         <Settings apply={closeSettings}/>
         <img src={SettingsIcon} alt="settings icon" className="settings-icon" onClick={openSettings}/>
       </div>
