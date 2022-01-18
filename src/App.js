@@ -1,9 +1,9 @@
 import Logo from "./images/logo.svg";
-import settingsIcon from "./images/icon-settings.svg";
+import SettingsIcon from "./images/icon-settings.svg";
 import Button from "./components/Button";
 import Clock from "./components/Clock";
 import Settings from "./components/Settings";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import clsx from "clsx";
 
 function App() {
@@ -37,8 +37,37 @@ function App() {
     setStartTimer(false);
   }
 
-  // user click apply to apply settings
+  // user click settings button to open settings tab
+  function openSettings() {
+    const settingsTab = document.querySelector('.settings');
+    settingsTab.style.display = 'block';
+  }
 
+  // user click close button to close settings tab & switch session to pomodoro
+  function closeSettings() {
+    const settingsTab = document.querySelector('.settings');
+    settingsTab.style.display = 'none';
+    handleChangeSession(pomodoro, "pomodoro");
+  }
+
+  useEffect(() => {
+    if (startTimer) {
+      if (timer > 0) {
+        let interval = setInterval(() => {
+          setTimer(seconds => seconds-1);
+        }, 1000);
+        return () => clearInterval(interval);
+      }
+      else {
+        setStartTimer(false);
+      }
+    }
+    else {
+      if (session === 'pomodoro') setTimer(pomodoro*60);
+      if (session === 'short') setTimer(shortBreak*60);
+      if (session === 'long') setTimer(longBreak*60);
+    }
+  }, [startTimer, timer]);
 
   return (
     <div className="App">
@@ -50,8 +79,8 @@ function App() {
           <Button buttonClass={session === "long"? controlButtonColor:"control-button"} text="Long Break" onClick={() => handleChangeSession(longBreak, "long")} />
         </div>
         <Clock />
-        <Settings />
-        <img src={settingsIcon} alt="settings icon" className="settingsIcon" />
+        <Settings apply={closeSettings}/>
+        <img src={SettingsIcon} alt="settings icon" className="settings-icon" onClick={openSettings}/>
       </div>
     </div>
   );
