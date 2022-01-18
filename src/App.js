@@ -5,15 +5,16 @@ import Clock from "./components/Clock";
 import Settings from "./components/Settings";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
+import "./App.css";
 
 function App() {
   const [pomodoro, setPomodoro] = useState(25);
   const [shortBreak, setShortBreak] = useState(5);
   const [longBreak, setLongBreak] = useState(15);
 
-  const [timer, setTimer] = useState(25*60);
-  const [start, setStart] = useState(false);
-  const [pause, setPause] = useState(false);
+  const [timer, setTimer] = useState(25*60); // total seconds
+  const [start, setStart] = useState(false); // session started/ended
+  const [pause, setPause] = useState(false); // session started/paused
   const [session, setSession] = useState("pomodoro"); // pomodoro | short | long
 
   const [font, setFont] = useState("kumbh"); // kumbh | roboto | space
@@ -65,6 +66,7 @@ function App() {
         setStart(false);
       }
     }
+    // session ended
     else {
       if (session === 'pomodoro') setTimer(pomodoro*60);
       if (session === 'short') setTimer(shortBreak*60);
@@ -86,13 +88,13 @@ function App() {
                 setPause={setPause}
                 pause={pause}
                 timer={timer}
-                // session={session}
                 themeColor={themeColor}
-                // pomodoro={pomodoro}
-                // short={shortBreak}
-                // long={longBreak}
+                session={session}
+                pomodoro={pomodoro}
+                short={shortBreak}
+                long={longBreak}
         />
-        <Settings apply={closeSettings}/>
+        {/* <Settings apply={closeSettings}/> */}
         <img src={SettingsIcon} alt="settings icon" className="settings-icon" onClick={openSettings}/>
       </div>
     </div>

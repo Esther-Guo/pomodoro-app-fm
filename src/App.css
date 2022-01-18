@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&family=Roboto+Slab:wght@700&family=Space+Mono:wght@700&display=swap");
+
+body {
+    background: #1e213f;
+    text-align: center;
+    margin: 0;
+}
+
+h1, h2, h3, h4, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 100px;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -4px;
+}
+
+h2 {
+    font-size: 28px;
+    line-height: 34px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 700;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 16px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    text-transform: lowercase;
+}
+
+.kumbh { font-family: "Kumbh Sans", sans-serif;}
+.roboto { font-family: "Roboto Slab", sans-serif;}
+.space { font-family: "Space Mono", sans-serif;}
+
+.clock {
+    margin: 0 auto 79px;
+    background: linear-gradient(315deg, #2e325a 0%, #0e112a 100%);
+    border: none;
+    border-radius: 50%;
+    height: 410px;
+    width: 410px;
+    margin-bottom: 63px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -50px -50px 100px #272c5a, 50px 50px 100px #121530;;
+}
+
+.clock .main-button {
+    cursor: pointer;
+    background: #161932;
+    border: none;
+    border-radius: 50%;
+    height: 366px;
+    width: 366px;
+    color: #d7e0ff;
+    position: relative;
+    outline: transparent;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock h1 {
+    margin-top: 10px;
+}
+
+.clock .progress-ring {
+    position: absolute;
+    margin: auto;
+}
+
+.clock .progress-ring__circle {
+    transition: stroke-dashoffset 0.35s;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+
+.clock .progress-ring__circle .red {
+    stroke: #f87070;
+}
+
+.clock .progress-ring__circle .purple {
+    stroke: #d881f8;
+}
+
+.clock .progress-ring__circle .blue {
+    stroke: #70f3f8;
+}
+

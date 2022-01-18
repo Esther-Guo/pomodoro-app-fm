@@ -1,6 +1,8 @@
 import clsx from 'clsx';
+import { useEffect } from 'react';
+import { useState } from 'react/cjs/react.development';
 
-const Clock = ({ setStart, start, setPause, pause, timer, themeColor }) => {
+const Clock = ({ setStart, start, setPause, pause, timer, themeColor, session, pomodoro, short, long }) => {
 
     const ringColor = clsx('progress-ring__circle', {
         red: themeColor === 'red',
@@ -15,6 +17,28 @@ const Clock = ({ setStart, start, setPause, pause, timer, themeColor }) => {
             setPause(!pause);
         }
     }
+
+    useEffect(() => {
+        const circle = document.querySelector('#circle');
+        const radius = circle.r.baseVal.value;
+        const circumference = radius * 2 * Math.PI;
+        circle.style.strokeDasharray = `${circumference} ${circumference}`;
+        circle.style.strokeDashoffset = circumference;
+
+        let percent = 1;
+        if (session === 'pomodoro') {
+            percent = (timer / (pomodoro * 60)) * 100;
+        }
+        if (session === 'short') {
+            percent = (timer / (short * 60)) * 100;
+        }
+        if (session === 'long') {
+            percent = (timer / (long * 60)) * 100;
+        }
+        const offset = circumference - (percent / 100) * circumference;
+        circle.style.strokeDashoffset = offset;
+
+    }, [timer, session, pomodoro, short, long])
 
     return (
         <div className="clock">
