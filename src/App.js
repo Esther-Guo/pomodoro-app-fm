@@ -37,6 +37,7 @@ function App() {
     setTimer(timerLen * 60);
     setSession(sessionName);
     setStart(false);
+    setPause(false);
   }
 
   // user click settings button to open settings tab
