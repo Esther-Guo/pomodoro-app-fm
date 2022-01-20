@@ -95,7 +95,17 @@ function App() {
                 short={shortBreak}
                 long={longBreak}
         />
-        {/* <Settings apply={closeSettings}/> */}
+        <Settings 
+              pomodoro = {pomodoro}
+              short = {shortBreak}
+              long = {longBreak}
+              setPomodoro = {setPomodoro}
+              setShort = {setShortBreak}
+              setLong = {setLongBreak}
+              setFont = {setFont}
+              setThemeColor = {setThemeColor}
+              apply={closeSettings}
+        />
         <img src={SettingsIcon} alt="settings icon" className="settings-icon" onClick={openSettings}/>
       </div>
     </div>
