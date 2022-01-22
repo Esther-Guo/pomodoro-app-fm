@@ -42,13 +42,13 @@ function App() {
 
   // user click settings button to open settings tab
   function openSettings() {
-    const settingsTab = document.querySelector('.settings');
+    const settingsTab = document.querySelector('.settings-panel');
     settingsTab.style.display = 'block';
   }
 
   // user click close button to close settings tab & switch session to pomodoro
   function closeSettings() {
-    const settingsTab = document.querySelector('.settings');
+    const settingsTab = document.querySelector('.settings-panel');
     settingsTab.style.display = 'none';
     handleChangeSession(pomodoro, "pomodoro");
   }
@@ -77,7 +77,7 @@ function App() {
 
   return (
     <div className="App">
-      <img className="title" src={Logo} alt="pomodoro logo" />
+      {/* <img className="title" src={Logo} alt="pomodoro logo" /> */}
       <div className={fontClass}>
         <div className="control-panel">
           <Button buttonClass={session === "pomodoro"? controlButtonColor:"control-button"} text="Pomodoro" onClick={() => handleChangeSession(pomodoro, "pomodoro")} />
@@ -99,6 +99,8 @@ function App() {
               pomodoro = {pomodoro}
               short = {shortBreak}
               long = {longBreak}
+              fontFamily = {font}
+              themeColor = {themeColor}
               setPomodoro = {setPomodoro}
               setShort = {setShortBreak}
               setLong = {setLongBreak}

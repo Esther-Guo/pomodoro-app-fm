@@ -3,27 +3,32 @@ import ArrowDownIcon from "./img/icon-arrow-down.svg";
 import CloseIcon from "./img/icon-close.svg";
 import CheckIcon from "./img/icon-check.svg";
 
-const Settings = ({ pomodoro, short, long, setPomodoro, setShort, setLong, setFont, setThemeColor, apply }) => {
+const Settings = ({ pomodoro, short, long, fontFamily, themeColor, setPomodoro, setShort, setLong, setFont, setThemeColor, apply }) => {
 
     const sessions = ['pomodoro', 'short', 'long'];
     const fonts = ['kumbh', 'roboto', 'space'];
     const themes = ['red', 'blue', 'purple'];
 
-    function handleFontChange(font, e) {
-        setFont(font);
-        console.log(font);
-    }
-
-    function handleThemeChange(theme, e) {
-        setThemeColor(theme);
-        console.log(theme);
-    }
-
+    // display current duration of each session
     function sessionSwitch(session) {
         switch(session) {
-            case 'pomodoro': return pomodoro;
+            // case 'pomodoro': return pomodoro;
             case 'short': return short;
             case 'long': return long;
+            default: return pomodoro;
+        }
+    }
+
+    function changeTime(session, direction) {
+        if (direction === 'add') {
+            if (session === 'pomodoro' && pomodoro < 60) setPomodoro(pomodoro+1);
+            if (session === 'short' && short < 15) setShort(short+1);
+            if (session === 'long' && long < 30) setLong(long+1);
+        }
+        else {
+            if (session === 'pomodoro' && pomodoro > 0) setPomodoro(pomodoro-1);
+            if (session === 'short' && short > 0) setShort(short-1);
+            if (session === 'long' && long > 0) setLong(long-1);
         }
     }
 
@@ -43,12 +48,12 @@ const Settings = ({ pomodoro, short, long, setPomodoro, setShort, setLong, setFo
                                         <div className="time-adjust">
                                             <p>{sessionSwitch(session)}</p>
                                             <div className="toggles">
-                                                <img src={ArrowUpIcon} alt="increase one minute" />
-                                                <img src={ArrowDownIcon} alt="decrease one minute" />
+                                                <img src={ArrowUpIcon} alt="increase one minute" onClick={ () => changeTime(session, 'add') }/>
+                                                <img src={ArrowDownIcon} alt="decrease one minute" onClick={ () => changeTime(session, 'minus') }/>
                                             </div>
                                         </div>
                                     </div>
-                            })
+                                    })
                         }
                     </div>
                 </div>
@@ -57,8 +62,8 @@ const Settings = ({ pomodoro, short, long, setPomodoro, setShort, setLong, setFo
                     <div className="font-buttons">
                         { fonts.map(font => {
                             return <button key={font}
-                                            onClick={(e) => handleFontChange(font, e)}
-                                            className={`font-button ${font}`} >
+                                            onClick={() => setFont(font)}
+                                            className={ font === fontFamily? `font-button ${font} active`:`font-button ${font}` } >
                                     Aa
                                     </button>
                         })}
@@ -69,8 +74,8 @@ const Settings = ({ pomodoro, short, long, setPomodoro, setShort, setLong, setFo
                     <div className="theme-buttons">
                     { themes.map(theme => {
                             return <button key={theme} 
-                                            onClick={(e) => handleThemeChange(theme, e)}
-                                            className={`theme-button ${theme}`} >
+                                            onClick={() => setThemeColor(theme)}
+                                            className={ theme === themeColor? `theme-button ${theme} active`:`theme-button ${theme}`} >
                                     <img src={CheckIcon} alt="check icon" className="check-icon" />
                                     </button>
                         })}

@@ -47,9 +47,10 @@ p {
     text-transform: lowercase;
 }
 
-.kumbh { font-family: "Kumbh Sans", sans-serif;}
-.roboto { font-family: "Roboto Slab", sans-serif;}
-.space { font-family: "Space Mono", sans-serif;}
+.kumbh * { font-family: "Kumbh Sans", sans-serif;}
+.roboto * { font-family: "Roboto Slab", sans-serif;}
+.space * { font-family: "Space Mono", sans-serif;}
+
 
 .title {margin-top: 30px;}
 
@@ -101,15 +102,15 @@ p {
 }
 
 
-.clock .progress-ring__circle .red {
+.clock .progress-ring__circle.red {
     stroke: #f87070;
 }
 
-.clock .progress-ring__circle .purple {
+.clock .progress-ring__circle.purple {
     stroke: #d881f8;
 }
 
-.clock .progress-ring__circle .blue {
+.clock .progress-ring__circle.blue {
     stroke: #70f3f8;
 }
 
@@ -157,7 +158,7 @@ p {
 }
 
 .settings-panel {
-    display: block;
+    display: none;
     background: white;
     width: 87%;
     border-radius: 15px;
@@ -266,7 +267,7 @@ p {
     padding: 3px;
 }
 
-.font-button .active {
+.font-button.active {
     color: #ffffff;
     background: #161932;
 }
@@ -287,7 +288,7 @@ p {
     display: none;
 }
 
-.theme-button.active .check {
+.theme-button.active .check-icon {
     display: inline;
 }
 
