@@ -1,0 +1,146 @@
+.settings-panel {
+    display: none;
+    background: white;
+    width: 87%;
+    border-radius: 15px;
+    position: absolute;
+    top: 46px;
+    left: 50%;
+    text-align: left;
+    transform: translateX(-50%);
+    max-width: 540px;
+}
+
+.settings-panel .close-button {
+    cursor: pointer;
+}
+
+.settings-container {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.settings-header {
+    padding: 34px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e3e1e1;
+}
+
+.time-settings {
+    padding: 24px 0;
+    border-bottom: 1px solid #e3e1e1;
+}
+
+.time-settings .time-control-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.time-settings .time-control-container .time-control {
+    margin-top: 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.time-settings .time-control-container .time-control p{
+    color: #1e213f;
+    opacity: 0.4;
+}
+
+.time-settings .time-control-container .time-control .time-adjust {
+    box-sizing: border-box;
+    width: 140px;
+    height: 48px;
+    background: #eff1fa;
+    border-radius: 10px;
+    padding: 15px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.time-settings .time-control-container .time-control .time-adjust p {
+    color: #1e213f;
+    opacity: 1;
+}
+
+.time-settings .time-control-container .time-control .time-adjust .toggles {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.time-settings .time-control-container .time-control .time-adjust .toggles img {
+    cursor: pointer;
+}
+
+.font-settings {
+    padding: 24px 0;
+    border-bottom: 1px solid #e3e1e1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.font-buttons,
+.theme-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.font-button,
+.theme-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+}
+
+.font-button {
+    cursor: pointer;
+    outline: transparent;
+    padding: 3px;
+}
+
+.font-button.active {
+    color: #ffffff;
+    background: #161932;
+}
+
+.theme-settings {
+    padding: 16px 0 59px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.theme-button {
+    cursor: pointer;
+    outline: transparent;
+}
+  
+.theme-button .check-icon {
+    display: none;
+}
+
+.theme-button.active .check-icon {
+    display: inline;
+}
+
+.theme-button.red {
+    background: #f87070;
+}
+
+.theme-button.blue {
+    background: #70f3f8;
+}
+
+.theme-button.purple {
+    background: #d881f8;
+}

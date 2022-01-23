@@ -1,0 +1,57 @@
+.clock {
+    margin: 0 auto 79px;
+    background: linear-gradient(315deg, #2e325a 0%, #0e112a 100%);
+    border: none;
+    border-radius: 50%;
+    height: 410px;
+    width: 410px;
+    margin-bottom: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -50px -50px 100px #272c5a, 50px 50px 100px #121530;;
+}
+
+.clock .main-button {
+    cursor: pointer;
+    background: #161932;
+    border: none;
+    border-radius: 50%;
+    height: 366px;
+    width: 366px;
+    color: #d7e0ff;
+    position: relative;
+    outline: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock h1 {
+    margin-top: 10px;
+}
+
+.clock .progress-ring {
+    position: absolute;
+    margin: auto;
+}
+
+.clock .progress-ring__circle {
+    transition: stroke-dashoffset 0.35s;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+
+.clock .progress-ring__circle.red {
+    stroke: #f87070;
+}
+
+.clock .progress-ring__circle.purple {
+    stroke: #d881f8;
+}
+
+.clock .progress-ring__circle.blue {
+    stroke: #70f3f8;
+}
