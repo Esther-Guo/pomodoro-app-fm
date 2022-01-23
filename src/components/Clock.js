@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { useEffect } from 'react';
 import './styles/Clock.css';
+import React from 'react';
 
 const Clock = ({ setStart, start, setPause, pause, timer, themeColor, session, pomodoro, short, long }) => {
 

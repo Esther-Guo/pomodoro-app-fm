@@ -1,8 +1,9 @@
 import Logo from "./images/logo.svg";
 import SettingsIcon from "./images/icon-settings.svg";
-import Button from "./components/Button";
-import Clock from "./components/Clock";
-import Settings from "./components/Settings";
+// import Button from "./components/Button";
+// import Clock from "./components/Clock";
+// import Settings from "./components/Settings";
+import { Button, Clock, Settings } from "esther-pomodoro-component";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import "./App.css";
@@ -73,7 +74,7 @@ function App() {
       if (session === 'short') setTimer(shortBreak*60);
       if (session === 'long') setTimer(longBreak*60);
     }
-  }, [start, pause, timer]);
+  }, [start, pause, timer, longBreak, shortBreak, pomodoro, session]);
 
   return (
     <div className="App">
