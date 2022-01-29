@@ -64,3 +64,12 @@ p {
     align-items: center;
     max-width: 373px;
 }
+
+.settings-icon {
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+.settings-icon:hover {
+    transform: rotate(0.5turn);
+}
