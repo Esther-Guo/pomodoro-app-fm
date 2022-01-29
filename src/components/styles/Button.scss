@@ -1,0 +1,34 @@
+@use 'config';
+
+.control-panel {
+    .control-button {
+        cursor: pointer;
+        background: none;
+        text-transform: lowercase;
+        border-radius: 31px;
+        border: none;
+        color: #d7e0ff8a;
+        font-weight: 700;
+        font-size: 14px;
+        outline: transparent;
+    }
+
+    .control-button.active {
+        background: config.$red;
+        color: #1e213f;
+        padding: 16px 18px;
+        text-align: center;
+    }
+
+    .control-button.active.red {
+        background: config.$red;
+    }
+
+    .control-button.active.blue {
+        background: config.$blue;
+    }
+
+    .control-button.active.purple {
+        background: config.$purple;
+    }
+}

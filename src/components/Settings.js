@@ -2,7 +2,8 @@ import ArrowUpIcon from "./img/icon-arrow-up.svg";
 import ArrowDownIcon from "./img/icon-arrow-down.svg";
 import CloseIcon from "./img/icon-close.svg";
 import CheckIcon from "./img/icon-check.svg";
-import './styles/Settings.css';
+// import './styles/Settings.css';
+import './styles/Settings.scss';
 import React from 'react';
 
 const Settings = ({ pomodoro, short, long, fontFamily, themeColor, setPomodoro, setShort, setLong, setFont, setThemeColor, apply }) => {
