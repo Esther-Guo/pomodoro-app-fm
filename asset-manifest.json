@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/pomodoro-app-fm/static/css/main.c5c14f28.css",
-    "main.js": "/pomodoro-app-fm/static/js/main.c6c06c94.js",
+    "main.css": "/pomodoro-app-fm/static/css/main.4c9f704f.css",
+    "main.js": "/pomodoro-app-fm/static/js/main.984c0bce.js",
     "static/media/logo.svg": "/pomodoro-app-fm/static/media/logo.7479961e8a1563f1f8124a7cff89bef2.svg",
     "static/media/icon-settings.svg": "/pomodoro-app-fm/static/media/icon-settings.e0a317db0ff4a140aa696b8ac9c4c393.svg",
+    "static/media/icon-todo.svg": "/pomodoro-app-fm/static/media/icon-todo.57fbb71d67c8c0f1234816fa144f7c2a.svg",
     "index.html": "/pomodoro-app-fm/index.html",
     "static/media/icon-check.svg": "/pomodoro-app-fm/static/media/icon-check.f0d2f3ba44d0aa74e94356bef2e738d6.svg",
-    "static/media/icon-close.svg": "/pomodoro-app-fm/static/media/icon-close.79cfecafebb13ec38327a8a293785c9d.svg",
+    "static/media/icon-cross.svg": "/pomodoro-app-fm/static/media/icon-cross.6ee81d30b75cab19d6f7314624fcc4d6.svg",
     "static/media/icon-arrow-down.svg": "/pomodoro-app-fm/static/media/icon-arrow-down.035462279247f95a698a2b3bcba29ef1.svg",
     "static/media/icon-arrow-up.svg": "/pomodoro-app-fm/static/media/icon-arrow-up.0848c2d6df856bac6181ea5a28375f9e.svg",
-    "main.c5c14f28.css.map": "/pomodoro-app-fm/static/css/main.c5c14f28.css.map",
-    "main.c6c06c94.js.map": "/pomodoro-app-fm/static/js/main.c6c06c94.js.map"
+    "main.4c9f704f.css.map": "/pomodoro-app-fm/static/css/main.4c9f704f.css.map",
+    "main.984c0bce.js.map": "/pomodoro-app-fm/static/js/main.984c0bce.js.map"
   },
   "entrypoints": [
-    "static/css/main.c5c14f28.css",
-    "static/js/main.c6c06c94.js"
+    "static/css/main.4c9f704f.css",
+    "static/js/main.984c0bce.js"
   ]
 }
