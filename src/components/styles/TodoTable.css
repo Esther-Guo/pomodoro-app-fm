@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+html {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 62.5%;
+    /* color: hsl(234, 39%, 85%) */
+}
+
+/* body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: hsl(235, 21%, 11%);
+    background-image: url("./images/bg-desktop-dark.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 1.8rem;
+} */
+
+.btn {
+    background-color: transparent;
+    border: none;
+    color: hsl(234, 11%, 52%);
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    font-family: inherit;
+    cursor: pointer;
+ }
+
+ .btn-bold {
+     font-weight: bold;
+ }
+
+.btn:hover {
+    color: hsl(236, 33%, 92%);
+}
+
+p.btn {
+    pointer-events: none;
+}
+
+.header {
+    margin: 7rem 0 3rem 0;
+    color:white;
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: 14px;
+    line-height: 2rem;
+}
+
+.input-textbox {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width:100%;
+    background-color: hsl(235, 24%, 19%);
+    padding: 2rem 2.4rem;
+    margin-top: 4.8rem; 
+    margin-bottom: 2.4rem;
+    border: 1px solid hsl(237, 14%, 26%);
+    border-radius: 5px;
+}
+
+.todo-input {
+    background-color: transparent;
+    margin-left: 2rem;
+    border: none;
+    font-size: 1.8rem;
+    font-family: inherit;
+    line-height: 2rem;
+    color: inherit;
+}
+
+.todo-input:focus {
+    outline: none;
+ }
+
+.todo-circle, .todo-check {
+    width:24px;
+    height: 24px;
+    background: transparent;
+    border: 1px solid hsl(233, 14%, 35%);
+    border-radius: 50%;
+}
+
+.main {
+    box-sizing: border-box;
+}
+
+.todo-list {
+    padding-left: 0;
+    border-top: 1px solid  hsl(237, 14%, 26%);
+    border-left: 1px solid hsl(237, 14%, 26%);
+    border-right: 1px solid hsl(237, 14%, 26%);
+    border-radius: 5px;
+}
+
+.todo-list:first-child {
+    overflow: hidden;
+ }
+
+.todo-element {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0rem 2.4rem;
+    box-sizing: border-box;
+    background-color: hsl(235, 24%, 19%);
+    border-bottom: 1px solid  hsl(237, 14%, 26%);
+}
+
+.todo-element p {
+    flex: 1 1;
+    line-height: 30px;
+    margin: 5px 0 5px 2rem;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.todo-element-hide {
+    display: none;
+}
+ 
+.todo-element-check p {
+    color: hsl(233, 14%, 35%);
+    text-decoration: line-through;
+}
+
+.todo-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border .5s ease-in-out;
+}
+ 
+.todo-check img{
+    /*replace the src defined in js code */
+    /* content: url('./images/icon-check.svg'); */
+    transform: scale(0);
+    transition: transform .5s ease-in-out; 
+}
+ 
+.todo-element-check .todo-check {
+    background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));     
+}
+ 
+.todo-element-check .todo-check  img{
+    transform: scale(1);
+} 
+
+.todo-element:hover > .todo-check {
+    border: 1px solid hsl(280, 87%, 65%);
+}
+
+.todo-delete {
+    background: transparent;
+    color: hsl(234, 39%, 85%);
+    border: none;
+    transform: scale(0); 
+    transition: transform .5s ease-in-out;
+}
+ 
+.todo-element:hover > .todo-delete {
+    transform: scale(1);
+} 
+
+/* .todo-delete img{
+    content: url('./images/icon-cross.svg');
+}  */
+
+.todo-bottom-side {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2.4rem;
+    background: hsl(235, 24%, 19%);
+    box-sizing: border-box;
+    border-bottom: 1px solid hsl(237, 14%, 26%);
+    border-left: 1px solid  hsl(237, 14%, 26%);
+    border-right: 1px solid  hsl(237, 14%, 26%);
+    border-radius: 5px;
+}
+
+.todo-filter {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    padding: 0.5rem 2.4rem;
+    transform: translate(-140%, -140%);
+}
+
+.todo-filter label {
+    margin: 0 0.8rem;
+}
+
+.todo-filter input[type="radio"] {
+    display: none;
+}
+
+.todo-filter input[type="radio"]:checked + label {
+    color: hsl(228, 45%, 44%);
+}

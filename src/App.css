@@ -47,6 +47,15 @@ p {
     text-transform: lowercase;
 }
 
+.App {
+    display: flex;
+    justify-content: center;
+}
+
+.clock-container {
+    margin: 0 3em;
+}
+
 .kumbh * { font-family: "Kumbh Sans", sans-serif;}
 .roboto * { font-family: "Roboto Slab", sans-serif;}
 .space * { font-family: "Space Mono", sans-serif;}
@@ -54,6 +63,7 @@ p {
 .title {margin-top: 30px;}
 
 .control-panel {
+    flex: 1 1 auto;
     margin: 20px auto;
     width: 87%;
     background: #161932;
@@ -72,4 +82,19 @@ p {
 
 .settings-icon:hover {
     transform: rotate(0.5turn);
+}
+
+.todo-container {
+    /* display: none; */
+    max-width: 600px;
+    margin: 0 3em;
+    flex: 1 1 auto;
+    color: hsl(234, 39%, 85%)
+}
+
+.todo-icon {
+    position: fixed;
+    right: 15px;
+    bottom: 8px;
+    cursor: pointer;
 }
