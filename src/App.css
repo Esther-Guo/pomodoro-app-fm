@@ -44,7 +44,7 @@ p {
     font-size: 14px;
     font-weight: 700;
     line-height: 18px;
-    text-transform: lowercase;
+    /* text-transform: lowercase; */
 }
 
 .App {

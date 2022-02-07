@@ -20,6 +20,14 @@ const Clock = ({ setStart, start, setPause, pause, timer, themeColor, session, p
         }
     }
 
+    function calTime() {
+        const mins = Math.floor(timer / 60) < 10 ? '0'+Math.floor(timer/60) : Math.floor(timer/60);
+        const sec = Math.floor(timer % 60) < 10 ? '0'+Math.floor(timer % 60) : Math.floor(timer % 60);
+        let timerText = `${mins}:${sec}`;
+        document.title = timerText
+        return timerText;
+    }
+
     useEffect(() => {
         const circle = document.querySelector('#circle');
         const radius = circle.r.baseVal.value;
@@ -63,8 +71,7 @@ const Clock = ({ setStart, start, setPause, pause, timer, themeColor, session, p
                     cy="169"
                     ></circle>
                 </svg>
-                <h1>{ Math.floor(timer / 60) < 10 ? '0'+Math.floor(timer/60) : Math.floor(timer/60) }:
-                {Math.floor(timer % 60) < 10 ? '0'+Math.floor(timer % 60) : Math.floor(timer % 60)}
+                <h1> {calTime()}
                 </h1>
                 <h3>{ !start||pause? 'start' : 'pause'}</h3>
             </button>
