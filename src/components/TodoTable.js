@@ -79,6 +79,8 @@ import './styles/TodoTable.css';
           });
       } else { // first visit
           localStorage.setItem("alreadyVisited", true);
+          localStorage.setItem('LocalTodos', JSON.stringify(this.state.todolist));
+          localStorage.setItem('TodoCount', this.state.todoCount);
       }
     }
   
