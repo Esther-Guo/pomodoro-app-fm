@@ -65,6 +65,7 @@ p.btn {
 }
 
 .todo-input {
+    flex-grow: 1;
     background-color: transparent;
     margin-left: 2rem;
     border: none;
@@ -79,7 +80,7 @@ p.btn {
  }
 
 .todo-circle, .todo-check {
-    width:24px;
+    width: 24px;
     height: 24px;
     background: transparent;
     border: 1px solid hsl(233, 14%, 35%);

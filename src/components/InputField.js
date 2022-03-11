@@ -18,7 +18,7 @@ class InputField extends Component {
       return (
         <div className="input-textbox">
         <div className="todo-circle"></div>
-        <input type="text" className="todo-input" id="todo-input" placeholder="Create a new todo..." maxLength="25" autoComplete="off" value={text} onChange={this.handleInputChange} onKeyUp={this.handleSubmit}/>
+        <input type="text" className="todo-input" id="todo-input" placeholder="Create a new todo..." maxLength="40" autoComplete="off" value={text} onChange={this.handleInputChange} onKeyUp={this.handleSubmit}/>
         </div>
       )
     }
